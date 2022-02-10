@@ -1,0 +1,4 @@
+export const ActionTypes = {
+    SET_BUSINESS: "SET_BUSINESS",
+    SELECTED_BUSINESS: "SELECTED_BUSINESS"
+}
