@@ -1,5 +1,9 @@
 # Getting Started with App
 
+Clone the repository
+
+git clone https://github.com/hrathod92/smooth-commerce.git
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
