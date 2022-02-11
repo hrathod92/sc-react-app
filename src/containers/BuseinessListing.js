@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setBusinesses } from '../redux/actions/businessActions';
 import axios from "axios";
-
 import BusinessComponent from "./BusinessComponent";
 
 const BusinessListing = () => {
@@ -23,7 +22,7 @@ const BusinessListing = () => {
     });
 
     return (
-        <div className="container">
+        <div className="container mt-5">
             <BusinessComponent />
         </div>
     );

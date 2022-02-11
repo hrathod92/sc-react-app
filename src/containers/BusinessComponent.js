@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { RouteLink } from '../styled-componants/app.style';
 
 const BusinessComponent = () => {
     const businesses = useSelector((state) => state.allBusinesses.businesses);
@@ -8,12 +9,12 @@ const BusinessComponent = () => {
     const renderList = businesses.map((business) => {
         const {id, company_name, website, address} = business;
         const toDetailPage = () =>{
-            navigate(`/business/${id}`,{state:business});
+            navigate(`/business/${id}`, {state:business});
         }
         return(
             <tr key={id}>
                 <th scope="row">{id}</th>
-                <td><a onClick={()=>{toDetailPage()}} style={{textDecoration: "underline", cursor: "pointer"}}>{company_name}</a></td>
+                <td><RouteLink onClick={()=>{toDetailPage()}}>{company_name}</RouteLink></td>
                 <td>{website ? website : 'N/A'}</td>
                 <td>{address ? address : 'N/A'}</td>
             </tr>

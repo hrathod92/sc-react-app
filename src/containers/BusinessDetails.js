@@ -1,6 +1,7 @@
 import React from "react";
 import {useLocation} from "react-router-dom";
 import BusinessListing from "./BuseinessListing";
+import { DetailHeader } from "../styled-componants/app.style";
 
 const BusinessDetails = () => {
     const business = useLocation();
@@ -9,9 +10,6 @@ const BusinessDetails = () => {
         return <BusinessListing />;
     }
     const {company_name, website, address, image, hours} = business.state;
-    const font = {
-        fontSize : '22px',
-    };
     const hoursHtml = hours.map((obj, id) => {
         return (<div key={id}>{obj.day} {obj.open} - {obj.close}</div>)
     });
@@ -27,33 +25,25 @@ const BusinessDetails = () => {
                     </div>
                     <div className="col-8">
                         <div className="my-3">
-                            <div className="font-weight-bolder" style={font}>
-                            Business Name:
-                            </div>
+                            <DetailHeader>Business Name:</DetailHeader>
                             <div className="col-5">
                                 {company_name}
                             </div>
                         </div>
                         <div className="mb-3">
-                            <div className="font-weight-bolder" style={font}>
-                                Address:
-                            </div>
+                            <DetailHeader>Address:</DetailHeader>
                             <div className="col-5">
                                 {address}
                             </div>
                         </div>
                         <div className="mb-3">
-                            <div className="font-weight-bolder" style={font}>
-                                Website:
-                            </div>
+                            <DetailHeader>Website:</DetailHeader>
                             <div className="col-5">
                                 {website ? website : 'N/A'}
                             </div>
                         </div>
                         <div className="mb-3">
-                            <div className="font-weight-bolder" style={font}>
-                                Hours:
-                            </div>
+                            <DetailHeader>Hours:</DetailHeader>
                             <div className="col-5">
                                 { hoursHtml }
                             </div>
